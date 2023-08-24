@@ -4,7 +4,9 @@ import type {Configuration as DevServerConfiguration} from "webpack-dev-server";
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     return {
         port: options.port,
+        // open открывает автоматически страницу в браузере с нашим приложением
         open: true,
         historyApiFallback: true,
+        hot: true,
     }
 }
