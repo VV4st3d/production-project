@@ -24,6 +24,10 @@
       "*": ["./src/*"]
     }
   },
+//пути не работают с include
+//  "include": [
+//    "./config/jest/setupTests.ts"
+//  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
