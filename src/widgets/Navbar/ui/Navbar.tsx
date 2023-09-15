@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from './Navbar.module.scss'
-import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
-import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
+import {Modal} from "shared/ui/Modal/Modal";
+import {useTranslation} from "react-i18next";
+import {Button, ButtonTheme} from "shared/ui/Button/Button";
 
 interface NavbarProps {
     className?: string,
@@ -10,27 +11,25 @@ interface NavbarProps {
 }
 
 export const Navbar = ({className}: NavbarProps) => {
-    // const arrayTheme:AppLinkTheme[] =
-    //     [AppLinkTheme.RED, AppLinkTheme.PRIMARY, AppLinkTheme.SECONDARY]
-    // const [appTheme, setAppTheme] = useState<AppLinkTheme>(AppLinkTheme.RED)
-    // function getRandomInt(max: number) {
-    //     return Math.floor(Math.random() * max);
-    // }
-    // function switcher(){
-    //     let randomTheme = arrayTheme[getRandomInt(3)]
-    //     while (randomTheme === appTheme){
-    //         console.log('repeat')
-    //         randomTheme = arrayTheme[getRandomInt(3)]
-    //     }
-    //     setAppTheme(randomTheme)
-    // }
+    const {t} = useTranslation()
+    const [isAuthModal, setIsAuthModal] = useState(false)
+
+    const onToggleModal = useCallback(()=>{
+        setIsAuthModal(prev=>!prev)
+    },[])
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links}>/
-                {/*<button onClick={switcher}>*/}
-                {/*    switch link theme*/}
-                {/*</button>*/}
-            </div>
+            <Button
+                theme={ButtonTheme.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onToggleModal}
+            >
+                {t('Войти')}
+            </Button>
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur cupiditate dolore et expedita ipsam placeat quis repellendus sit voluptatibus?
+            </Modal>
         </div>
     );
 };
