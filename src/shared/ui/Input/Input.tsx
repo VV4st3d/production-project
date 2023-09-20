@@ -22,7 +22,7 @@ export const Input = memo(
             autofocus,
             ...otherProps
         } = props
-        const ref = useRef<HTMLInputElement>()
+        const ref = useRef<HTMLInputElement>(null)
         const [isFocused, setIsFocused] = useState(false)
         const [caretPosition, setCaretPosition] = useState(0)
 
@@ -57,6 +57,7 @@ export const Input = memo(
                 )}
                 <div className={cls.caretWrapper}>
                     <input
+                        ref={ref}
                         value={value}
                         type={type}
                         onChange={onChangeHandler}
