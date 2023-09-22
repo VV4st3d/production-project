@@ -2,12 +2,14 @@ import {configureStore, ReducersMapObject} from '@reduxjs/toolkit'
 import {StateScheme} from "./StateScheme";
 import {counterReducer} from "entities/Counter";
 import {userReducer} from "entities/User";
+import {LoginReducer} from "features/authByUsername";
 
 
 export function createReduxStore(initialState?: StateScheme) {
     const rootReducer: ReducersMapObject<StateScheme> = {
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
+        loginForm: LoginReducer
     }
     return configureStore<StateScheme>({
         reducer: rootReducer,
@@ -15,6 +17,8 @@ export function createReduxStore(initialState?: StateScheme) {
         preloadedState: initialState
     })
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 
 // // Infer the `RootState` and `AppDispatch` types from the store itself
 // export type RootState = ReturnType<typeof store.getState>
