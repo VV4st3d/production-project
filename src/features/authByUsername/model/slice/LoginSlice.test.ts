@@ -1,6 +1,7 @@
 import {DeepPartial} from "@reduxjs/toolkit";
 import {LoginScheme} from "../types/LoginScheme";
 import {LoginActions, LoginReducer} from "./LoginSlice";
+import {loginByUsername} from "features/authByUsername/model/services/loginByUsername/loginByUsername";
 
 describe('LoginSlice.test', () => {
     test('set username', () => {
@@ -22,7 +23,10 @@ describe('LoginSlice.test', () => {
         )).toEqual({password: '123123'})
     })
     test('set isLoading', () => {
-
+        // const state: DeepPartial<LoginScheme> = {
+        //     isLoading: false
+        // }
+        // loginByUsername.pending(true, undefined)
     })
     test('set error', () => {
 

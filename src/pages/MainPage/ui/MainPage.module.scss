@@ -1,3 +1,14 @@
-//.main{
-//  color: var(--primary-color)
-//}
+.backside {
+  width: 300px;
+  height: 100px;
+  background: red;
+  scale: 1;
+  transition: scale 2s;
+
+}
+.change {
+  .backside{
+    scale: 0.3
+  }
+}
+

@@ -3,7 +3,7 @@ import cls from './LoginModal.module.scss'
 import {Modal} from "shared/ui/Modal/Modal";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "entities/User";
-import {Suspense, useEffect} from "react";
+import {Suspense, useEffect, useState} from "react";
 import {Loader} from "shared/ui/Loader/Loader";
 import {LoginFormAsync} from "../LoginForm/LoginForm.async";
 
@@ -14,7 +14,6 @@ interface LoginModalProps {
 }
 
 export const LoginModal = ({className, onClose, isOpen}: LoginModalProps) => {
-
     return (
         <Modal
             isOpen={isOpen}
@@ -23,7 +22,7 @@ export const LoginModal = ({className, onClose, isOpen}: LoginModalProps) => {
             lazy
         >
             <Suspense fallback={<Loader/>}>
-                <LoginFormAsync/>
+                <LoginFormAsync onSuccess={onClose}/>
             </Suspense>
         </Modal>
     );

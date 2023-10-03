@@ -15,5 +15,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Антон",
+    "lastname": "Майоров",
+    "age": "20",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Likino",
+    "username": "admin",
+    "avatar": "https://t3.ftcdn.net/jpg/04/94/77/88/360_F_494778843_LX41b5WqqZ3aTDxccu2UuYBqCWrQa2Ej.jpg"
+  }
 }

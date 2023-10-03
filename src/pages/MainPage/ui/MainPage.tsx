@@ -1,18 +1,21 @@
 import React, {useState} from 'react';
 import {useTranslation} from "react-i18next";
+import cls from './MainPage.module.scss'
 import {classNames} from "shared/lib/classNames/classNames";
-import {Input} from "shared/ui/Input/Input";
+import {Button} from "shared/ui/Button/Button";
 
 const MainPage = () => {
     const {t} = useTranslation()
-    const [value, setValue] = useState('')
-    const onChange = (val: string)=>{
-        setValue(val)
-    }
+    const [size, setSize] = useState(false)
     return (
         <div className={classNames('', {}, [])}>
             {t('Главная страница')}
-            <Input placeholder={'Введите текст'} onChange={onChange} value={value}/>
+            <div className={classNames('', {[cls.change]:size}, [])}>
+                <div className={classNames(cls.backside, {}, [])}>
+
+                </div>
+            </div>
+            <Button onClick={()=>setSize(prev=>!prev)}>changeSize</Button>
         </div>
     );
 };
