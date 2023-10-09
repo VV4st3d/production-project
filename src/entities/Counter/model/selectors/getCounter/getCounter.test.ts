@@ -1,6 +1,5 @@
 import {getCounter} from "./getCounter";
 import {StateScheme} from "app/providers/StoreProvider";
-import {DeepPartial} from "@reduxjs/toolkit";
 
 describe('getCounter test', ()=>{
     test('getCounter', ()=>{

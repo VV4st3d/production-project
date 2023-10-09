@@ -22,9 +22,10 @@
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
-    }
+    },
+    "strict": true
   },
-//пути не работают с include
+  //пути не работают с include
 //  "include": [
 //    "./config/jest/setupTests.ts"
 //  ],

@@ -9,8 +9,6 @@ export type ReducerList = {
     [name in StateSchemeKey]?: Reducer
 }
 
-type ReducerListEntry = [StateSchemeKey, Reducer]
-
 interface DynamicModuleLoaderProps {
     reducers: ReducerList,
     removeAfterAmount?: boolean
@@ -22,14 +20,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry)=>{
-            store.reducerManager.add(name, reducer)
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager.add(name as StateSchemeKey, reducer)
             dispatch({type: `@INIT ${name} reducer`})
         })
         return () => {
             if (removeAfterAmount) {
-                Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry)=>{
-                    store.reducerManager.remove(name)
+                Object.entries(reducers).forEach(([name, reducer]) => {
+                    store.reducerManager.remove(name as StateSchemeKey)
                     dispatch({type: `@DESTROY ${name} reducer`})
                 })
             }

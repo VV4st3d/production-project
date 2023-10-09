@@ -3,6 +3,9 @@ import {userScheme} from "entities/User";
 import {LoginScheme} from "features/authByUsername";
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
 import {ProfileScheme} from "entities/Profile";
+import {AxiosInstance} from "axios";
+import {To} from "@remix-run/router";
+import {NavigateOptions} from "react-router-dom";
 
 export interface StateScheme {
     counter: CounterScheme,
@@ -26,6 +29,16 @@ export interface reducerManager {
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateScheme>{
     reducerManager: reducerManager
+}
+
+export interface ThunkExtraArg {
+    api: AxiosInstance;
+    navigate?: (to: To, options?: NavigateOptions)=>void,
+}
+
+export interface ThunkConfig<T> {
+    rejectValue: T;
+    extra: ThunkExtraArg;
 }
 
 
