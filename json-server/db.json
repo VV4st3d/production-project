@@ -1,12 +1,32 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" },
-    { "id": "2", "title": "json-server1", "author": "typicode" },
-    { "id": "3", "title": "json-server2", "author": "typicode" },
-    { "id": "1", "title": "json-server3", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server1",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server2",
+      "author": "typicode"
+    },
+    {
+      "id": "1",
+      "title": "json-server3",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": "1" }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -16,12 +36,12 @@
     }
   ],
   "profile": {
-    "first": "Антон",
-    "lastname": "Майоров",
-    "age": "20",
+    "first": "Антон1231",
+    "lastname": "Майоров123",
+    "age": 201,
     "currency": "RUB",
     "country": "Russia",
-    "city": "Likino",
+    "city": "Likino123",
     "username": "admin",
     "avatar": "https://t3.ftcdn.net/jpg/04/94/77/88/360_F_494778843_LX41b5WqqZ3aTDxccu2UuYBqCWrQa2Ej.jpg"
   }
