@@ -41,9 +41,9 @@ export const Select = memo((props : SelectProps) => {
     }
     return (
         <div className={classNames(cls.Wrapper, {}, [className])}>
-            {label && <span className={cls.label}>
+            {label && (<span className={cls.label}>
                 {label+'>'}
-            </span>}
+            </span>)}
             <select disabled={readonly} className={cls.select} value={value} onChange={onChangeHandler}>
                 {optionList}
             </select>
