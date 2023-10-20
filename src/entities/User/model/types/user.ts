@@ -6,4 +6,6 @@ export interface User {
 //интерфейс для стейта, если его нет то пользователь не авторизован, если хранятся данные то авторизован
 export interface userScheme {
     authData?: User
+
+    _inited: boolean
 }
