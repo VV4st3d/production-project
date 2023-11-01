@@ -13,7 +13,7 @@ export const Avatar = ({className, src, size, alt = 'avatar'}:AvatarProps) => {
     const styles = useMemo<CSSProperties>(() => {
         return{
             width: size || 100,
-            height: size||100
+            height: size || 100
         }
     }, [size]);
     return (

@@ -7,6 +7,7 @@ import {AxiosInstance} from "axios";
 import {To} from "@remix-run/router";
 import {NavigateOptions} from "react-router-dom";
 import {ArticleDetailsScheme} from "entities/Article";
+import {ArticleDetailsCommentsScheme} from "pages/ArticlesDetailsPage";
 
 export interface StateScheme {
     counter: CounterScheme,
@@ -15,7 +16,8 @@ export interface StateScheme {
     //асинхронные редюсеры
     loginForm?: LoginScheme,
     profile?: ProfileScheme,
-    articleDetails?: ArticleDetailsScheme
+    articleDetails?: ArticleDetailsScheme,
+    articleDetailsComments?: ArticleDetailsCommentsScheme
 }
 
 export type StateSchemeKey = keyof StateScheme
