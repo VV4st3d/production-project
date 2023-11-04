@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,66 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123213",
+      "id": "N2CV75d"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "jfds",
+      "id": "T5HuCbm"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1111",
+      "id": "vzd2P98"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "515151",
+      "id": "InOCBWu"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "515151",
+      "id": "1YAMR4S"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "515151",
+      "id": "3YOE4jz"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "515151",
+      "id": "g_J9GgU"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "jkj",
+      "id": "Z-w7mT4"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "comment text",
+      "id": "_kNBRW4"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "comment text",
+      "id": "u8vBptt"
     }
   ],
   "users": [
@@ -108,7 +170,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png"
+      "avatar": "https://t3.ftcdn.net/jpg/04/94/77/88/360_F_494778843_LX41b5WqqZ3aTDxccu2UuYBqCWrQa2Ej.jpg"
     },
     {
       "id": "2",
@@ -118,14 +180,28 @@
       "avatar": "https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png"
     }
   ],
-  "profile": {
-    "first": "Антон",
-    "lastname": "Майоров",
-    "age": 20,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Ликино",
-    "username": "v4st3d",
-    "avatar": "https://t3.ftcdn.net/jpg/04/94/77/88/360_F_494778843_LX41b5WqqZ3aTDxccu2UuYBqCWrQa2Ej.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Антон",
+      "lastname": "Майоров",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Ликино",
+      "username": "v4st3d",
+      "avatar": "https://t3.ftcdn.net/jpg/04/94/77/88/360_F_494778843_LX41b5WqqZ3aTDxccu2UuYBqCWrQa2Ej.jpg"
+    },
+    {
+      "id": "2",
+      "first": "fd",
+      "lastname": "vc",
+      "age": 1,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "city",
+      "username": "noname",
+      "avatar": "https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png"
+    }
+  ]
 }

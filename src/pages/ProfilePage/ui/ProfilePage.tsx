@@ -20,6 +20,7 @@ import {ProfilePageHeader} from "./ProfilePageHeader/ProfilePageHeader";
 import {Currency} from "entities/Currency";
 import {Country} from "entities/Country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
+import {useParams} from "react-router-dom";
 
 
 const reducers: ReducerList = {
@@ -40,6 +41,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
     const readonly = useSelector(getProfileReadonly)
     const isLoading = useSelector(getProfileIsLoading)
     const validateErrors = useSelector(getProfileValidateErrors)
+    const {id} = useParams<{ id: string }>()
 
     const validateErrorTranslations = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
@@ -51,7 +53,9 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData())
+            if(id){
+                dispatch(fetchProfileData(id))
+            }
         }
     }, [dispatch]);
 

@@ -1,4 +1,4 @@
-import {Comment} from "features/Comment";
+import {Comment} from "entities/Comment";
 import {EntityState} from "@reduxjs/toolkit";
 
 export interface ArticleDetailsCommentsScheme extends EntityState<Comment>{
