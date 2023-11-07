@@ -18,14 +18,11 @@ export const addCommentForArticle = createAsyncThunk<
 
         const userData = getUserAuthData(getState())
         const article = getArticleDetailsData(getState())
-        console.log(text, userData, article)
         if(!userData || !text || !article){
             return rejectWithValue('no data')
         }
 
         try {
-            console.log('222222222')
-
             const response = await extra.api.post<Comment>('/comments', {
                 articleId: article?.id,
                 userId: userData.id,

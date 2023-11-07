@@ -9,6 +9,7 @@ import {NavigateOptions} from "react-router-dom";
 import {ArticleDetailsScheme} from "entities/Article";
 import {ArticleDetailsCommentsScheme} from "pages/ArticlesDetailsPage";
 import {AddCommentFormScheme} from "features/addNewComment";
+import {articlePageScheme} from "pages/ArticlesPage";
 
 export interface StateScheme {
     counter: CounterScheme,
@@ -19,7 +20,8 @@ export interface StateScheme {
     profile?: ProfileScheme,
     articleDetails?: ArticleDetailsScheme,
     articleDetailsComments?: ArticleDetailsCommentsScheme,
-    addCommentForm?: AddCommentFormScheme
+    addCommentForm?: AddCommentFormScheme,
+    articlesPage?: articlePageScheme
 }
 
 export type StateSchemeKey = keyof StateScheme

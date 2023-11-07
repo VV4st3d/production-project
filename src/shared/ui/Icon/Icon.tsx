@@ -11,6 +11,5 @@ export const Icon = memo(({className, Svg}: IconProps) => {
 
     return (
         <Svg className={classNames(cls.Icon, {}, [className])}/>
-
     );
 });
