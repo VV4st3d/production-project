@@ -13,7 +13,7 @@ import {
     getArticlePageIsLoading,
     getArticlePageView
 } from "../model/selectors/getArticlePageSelectors";
-import {Page} from "shared/ui/Page/Page";
+import {Page} from "widgets/Page/Page";
 import {fetchNextArticlePage} from "../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import {initArticlesPage} from "../model/services/initArticlesPage/initArticlesPage";
 

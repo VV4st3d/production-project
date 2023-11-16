@@ -53,7 +53,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
         <DynamicModuleLoader removeAfterAmount={true} reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')}/>
-                {error && <Text text={t('Вы ввели неверный логин или пароль')}theme={TextTheme.ERROR}></Text>}
+                {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR}/>}
                 <Input
                     autofocus
                     placeholder={t('Введите username')}
