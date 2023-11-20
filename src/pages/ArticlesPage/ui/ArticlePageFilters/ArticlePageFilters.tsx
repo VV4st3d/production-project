@@ -67,6 +67,7 @@ export const ArticlePageFilters = memo((props: ArticlePageFiltersProps) => {
     const onChangeType = useCallback((value: ArticleType) => {
         dispatch(articlePageSliceActions.setPage(1))
         dispatch(articlePageSliceActions.setType(value))
+        fetchData()
     }, [])
 
     return (
