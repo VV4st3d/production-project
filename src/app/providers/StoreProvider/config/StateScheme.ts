@@ -5,7 +5,7 @@ import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} fro
 import {ProfileScheme} from "entities/Profile";
 import {AxiosInstance} from "axios";
 import {ArticleDetailsScheme} from "entities/Article";
-import {ArticleDetailsCommentsScheme} from "pages/ArticlesDetailsPage";
+import {ArticleDetailsPageScheme} from "pages/ArticlesDetailsPage";
 import {AddCommentFormScheme} from "features/addNewComment";
 import {articlePageScheme} from "pages/ArticlesPage";
 import {UIScheme} from "features/UI";
@@ -19,9 +19,9 @@ export interface StateScheme {
     loginForm?: LoginScheme,
     profile?: ProfileScheme,
     articleDetails?: ArticleDetailsScheme,
-    articleDetailsComments?: ArticleDetailsCommentsScheme,
     addCommentForm?: AddCommentFormScheme,
-    articlesPage?: articlePageScheme
+    articlesPage?: articlePageScheme,
+    articleDetailsPage?: ArticleDetailsPageScheme
 }
 
 export type StateSchemeKey = keyof StateScheme
