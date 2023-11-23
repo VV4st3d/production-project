@@ -3,7 +3,7 @@ import cls from './ArticlesDetailsPage.module.scss'
 import {useTranslation} from "react-i18next";
 import {memo, useCallback, useEffect} from "react";
 import {ArticleDetails, ArticleList} from "entities/Article";
-import {useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {Text, TextSize} from "shared/ui/Text/Text";
 import {CommentList} from "entities/Comment";
 import {DynamicModuleLoader, ReducerList} from "shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
@@ -14,8 +14,6 @@ import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {fetchCommentsByArticleId} from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {AddCommentForm} from "features/addNewComment";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
-import {RoutePath} from "shared/config/routerConfig/routerConfig";
 import {Page} from "widgets/Page/Page";
 import {getArticleRecommendations} from "../../model/slices/articleDetailsPageRecommendationsSlice";
 import {getArticleRecommendationsIsLoading} from "../../model/selectors/recommendations";
@@ -23,6 +21,7 @@ import {
     fetchArticleRecommendations
 } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import {articleDetailsPageReducer} from "../../model/slices/index";
+import {ArticleDetailsPageHeader} from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticlesDetailsPageProps {
     className?: string,
@@ -40,11 +39,7 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading)
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
 
-    const onBackToList = useCallback(()=>{
-        navigate(RoutePath.articles)
-    },[navigate])
 
     const onSendComment = useCallback((text: string)=>{
         dispatch(addCommentForArticle(text))
@@ -66,9 +61,7 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
             <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id}/>
                 <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекоменудем')}/>
                 <ArticleList

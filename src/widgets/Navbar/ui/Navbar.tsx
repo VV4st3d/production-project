@@ -7,6 +7,9 @@ import {LoginModal} from "features/authByUsername";
 import {useSelector} from "react-redux";
 import {getUserAuthData, userActions} from "entities/User";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {Text, TextTheme} from "shared/ui/Text/Text";
+import {AppLink, AppLinkTheme} from "shared/ui/AppLink/AppLink";
+import {RoutePath} from "shared/config/routerConfig/routerConfig";
 
 interface NavbarProps {
     className?: string,
@@ -34,6 +37,10 @@ export const Navbar = memo(({className}: NavbarProps) => {
         if (authData) {
             return (
                 <header className={classNames(cls.Navbar, {}, [className])}>
+                    <Text theme={TextTheme.INVERTED} className={cls.appName} title={t('Social Media App')}/>
+                    <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} className={cls.createLink}>
+                        {t('Создать статью')}
+                    </AppLink>
                     <Button
                         theme={ButtonTheme.CLEAR_INVERTED}
                         className={cls.links}

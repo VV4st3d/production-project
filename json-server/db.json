@@ -179,7 +179,8 @@
           ]
         }
       ]
-    },{
+    },
+    {
       "id": "6",
       "title": "Python news",
       "subtitle": "Что нового в Python за 2022 год?",
@@ -642,6 +643,12 @@
       "userId": "2",
       "text": "comment text",
       "id": "u8vBptt"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "ml",
+      "id": "Wm1yxDl"
     }
   ],
   "users": [
