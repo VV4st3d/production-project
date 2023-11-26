@@ -7,7 +7,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "start": "webpack serve --env port=3000",
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
-    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-lb31568za-antons-projects-c20ac923.vercel.app",
+    "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-fg1jn08ax-antons-projects-c20ac923.vercel.app",
     "build:dev": "webpack --env mode=development",
     "start:dev:server": "node ./json-server/index.js"
   },
