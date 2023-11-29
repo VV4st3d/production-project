@@ -63,7 +63,7 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
             <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id}/>
-                <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекоменудем')}/>
+                <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')}/>
                 <ArticleList
                     className={cls.recommendations}
                     articles={recommendations}

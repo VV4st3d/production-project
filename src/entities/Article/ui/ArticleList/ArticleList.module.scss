@@ -7,6 +7,15 @@
 .SMALL{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
+
+  .card{
+    display: inline-flex;
+    height: 300px;
+  }
+
+  .row{
+    gap: 30px;
+    display: flex;
+  }
 }
