@@ -22,6 +22,7 @@ import {Country} from "entities/Country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useParams} from "react-router-dom";
 import {Page} from "widgets/Page/Page";
+import {VStack} from "shared/ui/Stack/VStack/VStack";
 
 
 const reducers: ReducerList = {
@@ -92,24 +93,26 @@ const ProfilePage = ({className}: ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterAmount>
             <Page className={classNames(cls.ProfilePage, {}, [className])}>
-                <ProfilePageHeader/>
-                {validateErrors?.length && validateErrors.map(err =>
-                    <Text theme={TextTheme.ERROR} text={validateErrorTranslations[err]} key={err}/>
-                )}
-                <ProfileCard
-                    readonly={readonly}
-                    data={formData}
-                    isLoading={isLoading}
-                    error={error}
-                    onChangeFirstname={onChangeFirstname}
-                    onChangeLastname={onChangeLastname}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeUsername={onChangeUsername}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                />
+                <VStack gap={'16'} max>
+                    <ProfilePageHeader/>
+                    {validateErrors?.length && validateErrors.map(err =>
+                        <Text theme={TextTheme.ERROR} text={validateErrorTranslations[err]} key={err}/>
+                    )}
+                    <ProfileCard
+                        readonly={readonly}
+                        data={formData}
+                        isLoading={isLoading}
+                        error={error}
+                        onChangeFirstname={onChangeFirstname}
+                        onChangeLastname={onChangeLastname}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeUsername={onChangeUsername}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

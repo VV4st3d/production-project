@@ -15,6 +15,7 @@ import {
     addCommentFormSliceActions,
     addCommentFormSliceReducer
 } from "features/addNewComment/model/slices/addCommetFormSlice";
+import {HStack} from "shared/ui/Stack";
 
 const reducers: ReducerList = {
     addCommentForm: addCommentFormSliceReducer
@@ -43,14 +44,14 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack justify={'between'} max className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
                     className={cls.input}
                     onChange={onCommentTextChange}
                     value={text}
                     placeholder={t('Введите текст комментария')}/>
                 <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>{t('Отправить')}</Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });
