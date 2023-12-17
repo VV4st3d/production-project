@@ -18,7 +18,6 @@ export const Sidebar = memo(({className}: SidebarProps) => {
     // в setState можно передавать калбек, который принимает предыдущее значение (prev=>!prev)
 
     const sidebarItemList = useSelector(getSidebarItems)
-
     const onToggle = () => {
         setCollapsed(prev => !prev)
     }
