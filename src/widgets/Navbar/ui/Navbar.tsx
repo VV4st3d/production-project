@@ -15,7 +15,6 @@ import {Avatar} from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
     className?: string,
-
 }
 
 export const Navbar = memo(({className}: NavbarProps) => {
