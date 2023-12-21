@@ -9,6 +9,7 @@
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
     "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-gamma-three.vercel.app/",
     "build:dev": "webpack --env mode=development",
+    "generate:slice": "node ./scripts/createSlice/index.js",
     "start:dev:server": "node ./json-server/index.js"
   },
   "keywords": [],
