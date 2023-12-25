@@ -33,7 +33,9 @@ const gapClasses: Record<FlexGap, string> = {
 
 type divProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export interface FlexProps extends divProps{
+export interface FlexProps
+    // extends divProps
+{
     className?: string,
     children: ReactNode,
     justify?: FlexJustify;

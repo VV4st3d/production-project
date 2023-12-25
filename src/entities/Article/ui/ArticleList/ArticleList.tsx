@@ -72,6 +72,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
+
     return (
         <WindowScroller
             onScroll={() => console.log('123')}
@@ -94,12 +95,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 </div>
             )}
         </WindowScroller>
-        // <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        //     {articles.length > 0 ?
-        //         articles.map(renderArticle) :
-        //         null}
-        //     {isLoading && getSkeletons(view)}
-        // </div>
-    )
-        ;
+
+    );
 });

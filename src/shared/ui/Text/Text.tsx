@@ -26,7 +26,7 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
-    size?: TextSize
+    size?: TextSize,
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3'
