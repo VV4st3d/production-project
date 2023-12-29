@@ -1,5 +1,4 @@
 import {classNames} from 'shared/lib/classNames/classNames';
-import cls from './EditableProfileCard.module.scss';
 import {memo, useCallback, useEffect} from 'react';
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
@@ -88,7 +87,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack max gap={'8'} className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack max gap={'8'} className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader/>
                 {validateErrors?.length && validateErrors.map(err =>
                     <Text theme={TextTheme.ERROR} text={validateErrorTranslations[err]} key={err}/>
