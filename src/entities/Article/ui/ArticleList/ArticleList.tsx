@@ -14,7 +14,8 @@ interface ArticleListProps {
     articles: Article[],
     isLoading?: boolean,
     view?: ArticleView,
-    target?: HTMLAttributeAnchorTarget
+    target?: HTMLAttributeAnchorTarget,
+    virtualized?: boolean
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -30,7 +31,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         articles,
         view = ArticleView.SMALL,
         isLoading,
-        target
+        target,
+        virtualized = true
     } = props
 
     const isBig = view === ArticleView.BIG
@@ -48,18 +50,18 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
     const rowRender = ({index, isScrolling, key, style}: ListRowProps) => {
         const items = []
-        const fromIndex = index*itemsPerRow
-        const toIndex = Math.min(fromIndex+itemsPerRow, articles.length)
+        const fromIndex = index * itemsPerRow
+        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length)
 
-        for (let i = fromIndex; i < toIndex ; i++) {
+        for (let i = fromIndex; i < toIndex; i++) {
             items.push(
                 <ArticleListItem
-                className={cls.card}
-                article={articles[i]}
-                view={view}
-                target={target}
-                key={'str'+i}
-            />)
+                    className={cls.card}
+                    article={articles[i]}
+                    view={view}
+                    target={target}
+                    key={'str' + i}
+                />)
         }
         return (
             <div
@@ -80,17 +82,26 @@ export const ArticleList = memo((props: ArticleListProps) => {
         >
             {({height, width, registerChild, onChildScroll, isScrolling, scrollTop}) => (
                 <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                    <List
-                        height={height ?? 700}
-                        rowCount={rowCount}
-                        rowHeight={isBig ? 700:330}
-                        rowRenderer={rowRender}
-                        width={width ? width - 80 : 700}
-                        autoHeight
-                        onScroll={onChildScroll}
-                        isScrolling={isScrolling}
-                        scrollTop={scrollTop}
-                    />
+                    {virtualized ? (
+                        <List
+                            height={height ?? 700}
+                            rowCount={rowCount}
+                            rowHeight={isBig ? 700 : 330}
+                            rowRenderer={rowRender}
+                            width={width ? width - 80 : 700}
+                            autoHeight
+                            onScroll={onChildScroll}
+                            isScrolling={isScrolling}
+                            scrollTop={scrollTop}
+                        />
+                    ) : (
+                        articles.map(item => (
+                            <ArticleListItem article={item} view={view}
+                                             target={target}
+                                             key={item.id}
+                                             className={cls.card}/>
+                        ))
+                    )}
                     {isLoading && getSkeletons(view)}
                 </div>
             )}

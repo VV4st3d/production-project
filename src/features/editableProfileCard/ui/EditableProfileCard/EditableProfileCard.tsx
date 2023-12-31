@@ -50,7 +50,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }
 
     useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
+        if (__PROJECT__ !== 'jest') {
             if(id){
                 dispatch(fetchProfileData(id))
             }
@@ -90,7 +90,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             <VStack max gap={'8'} className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader/>
                 {validateErrors?.length && validateErrors.map(err =>
-                    <Text theme={TextTheme.ERROR} text={validateErrorTranslations[err]} key={err}/>
+                    <Text
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslations[err]}
+                        key={err}
+                        data-testid={'EditableProfileCard.Error'}
+                    />
                 )}
                 <ProfileCard
                     readonly={readonly}
