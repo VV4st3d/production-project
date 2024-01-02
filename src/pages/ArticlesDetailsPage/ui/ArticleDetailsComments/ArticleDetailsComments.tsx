@@ -1,5 +1,5 @@
 import {classNames} from "shared/lib/classNames/classNames";
-import {memo, useCallback, useEffect} from 'react'
+import {memo, Suspense, useCallback, useEffect} from 'react'
 import {Text, TextSize} from "shared/ui/Text/Text";
 import cls from "../../ui/ArticleDetailsPage/ArticlesDetailsPage.module.scss";
 import {AddCommentForm} from "features/addNewComment";
@@ -14,10 +14,11 @@ import {
     fetchCommentsByArticleId
 } from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {VStack} from "shared/ui/Stack";
+import {Loader} from "shared/ui/Loader/Loader";
 
 interface ArticleDetailsCommentsProps {
     className?: string,
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -27,7 +28,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const comments = useSelector(getArticleComments.selectAll)
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
 
-    const onSendComment = useCallback((text: string)=>{
+    const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text))
     }, [dispatch])
 
@@ -38,7 +39,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     return (
         <VStack gap={'16'} max className={classNames('', {}, [className])}>
             <Text size={TextSize.L} className={cls.commentTitle} title={t('Комментарии')}/>
-            <AddCommentForm onSendComment={onSendComment}/>
+            <Suspense fallback={<Loader/>}>
+                <AddCommentForm onSendComment={onSendComment}/>
+            </Suspense>
             <CommentList isLoading={commentsIsLoading} comments={comments}/>
         </VStack>
     );

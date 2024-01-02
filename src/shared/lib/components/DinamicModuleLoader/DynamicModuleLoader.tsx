@@ -1,4 +1,4 @@
-import {FC, useEffect} from "react";
+import {FC, ReactNode, useEffect} from "react";
 import {useStore} from "react-redux";
 import {ReduxStoreWithManager, StateScheme} from "app/providers/StoreProvider";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -11,10 +11,11 @@ export type ReducerList = {
 
 interface DynamicModuleLoaderProps {
     reducers: ReducerList,
-    removeAfterAmount?: boolean
+    removeAfterAmount?: boolean,
+    children: ReactNode
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
+export const DynamicModuleLoader = (props:DynamicModuleLoaderProps) => {
     const {children, reducers, removeAfterAmount= true} = props
     const store = useStore() as ReduxStoreWithManager
     const dispatch = useAppDispatch()

@@ -27,8 +27,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.4",
     "@types/node": "^20.4.10",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-virtualized": "^9.21.28",
     "@types/webpack": "^5.28.1",
@@ -58,10 +58,6 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.7.4"
   },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@reduxjs/toolkit": "^1.9.5",
@@ -70,8 +66,8 @@
     "i18next": "^23.4.5",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-i18next": "^13.2.0",
     "react-redux": "^8.1.2",
     "react-virtualized": "^9.22.5",
