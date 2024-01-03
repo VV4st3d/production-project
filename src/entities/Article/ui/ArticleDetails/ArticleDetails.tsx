@@ -18,11 +18,12 @@ import {Avatar} from "shared/ui/Avatar/Avatar";
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import {Icon} from "shared/ui/Icon/Icon";
-import {ArticleBlock, ArticleBlockType} from "../../model/types/Article";
+import {ArticleBlock} from "../../model/types/Article";
 import {ArticleCodeBlockComponent} from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import {ArticleTextBlockComponent} from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {ArticleImageBlockComponent} from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import {HStack, VStack} from "shared/ui/Stack";
+import {ArticleBlockType} from "../../model/consts/consts";
 
 interface ArticleDetailsProps {
     className?: string,

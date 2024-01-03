@@ -1,6 +1,6 @@
-import {classNames, Mods} from "shared/lib/classNames/classNames";
+import {classNames} from "shared/lib/classNames/classNames";
 import cls from './Select.module.scss'
-import {ChangeEvent, memo, useMemo} from "react";
+import {ChangeEvent, useMemo} from "react";
 
 
 export interface SelectOption<T extends string> {
@@ -35,9 +35,6 @@ export const Select = <T extends string>(props : SelectProps<T>) => {
         if(onChange){
             onChange(e.target.value as T)
         }
-    }
-    const mods: Mods = {
-
     }
     return (
         <div className={classNames(cls.Wrapper, {}, [className])}>

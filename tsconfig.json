@@ -23,7 +23,8 @@
     "paths": {
       "*": ["./src/*"]
     },
-    "strict": true
+    "strict": true,
+    "isolatedModules": true,
   },
   //пути не работают с include
 //  "include": [
