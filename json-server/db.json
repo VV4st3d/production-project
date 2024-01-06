@@ -689,6 +689,18 @@
       "userId": "1",
       "text": "1100",
       "id": "J7p7_u6"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "AtE3vVr"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "comment",
+      "id": "smUu_Ji"
     }
   ],
   "users": [
@@ -696,21 +708,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://t3.ftcdn.net/jpg/04/94/77/88/360_F_494778843_LX41b5WqqZ3aTDxccu2UuYBqCWrQa2Ej.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png"
     }
   ],

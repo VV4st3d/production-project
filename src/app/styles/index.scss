@@ -4,20 +4,19 @@
 @import "./themes/dark";
 @import "./themes/orange";
 
-.body{
-    font: var(--font-m);
-    color: var(--primary-color);
-}
-
 
 .app{
     background: var(--bg-color);
     min-height: 100vh;
 }
 
+.app, .app_drawer, .app_modal{
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
 .content-page{
     display: flex;
-    color: var(--primary-color);
 }
 
 *::-webkit-scrollbar {
