@@ -1,6 +1,6 @@
-import {StateScheme} from "app/providers/StoreProvider";
+import {StateScheme} from "@/app/providers/StoreProvider";
 import {getProfileValidateErrors} from "./getProfileValidateErrors";
-import {ValidateProfileError} from "features/editableProfileCard";
+import {ValidateProfileError} from "@/features/editableProfileCard";
 
 describe('getProfileValidateErrors.test', ()=>{
     test('should return value', ()=>{

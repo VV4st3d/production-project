@@ -1,20 +1,20 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import {memo, Suspense, useCallback, useEffect} from 'react'
-import {Text, TextSize} from "shared/ui/Text/Text";
+import {Text, TextSize} from "@/shared/ui/Text/Text";
 import cls from "../../ui/ArticleDetailsPage/ArticlesDetailsPage.module.scss";
-import {AddCommentForm} from "features/addNewComment";
-import {CommentList} from "entities/Comment";
+import {AddCommentForm} from "@/features/addNewComment";
+import {CommentList} from "@/entities/Comment";
 import {useSelector} from "react-redux";
 import {getArticleComments} from "../../model/slices/articleDetailsCommentSlice";
 import {getArticleCommentsIsLoading} from "../../model/selectors/comments";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useTranslation} from "react-i18next";
 import {
     fetchCommentsByArticleId
-} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import {VStack} from "shared/ui/Stack";
-import {Loader} from "shared/ui/Loader/Loader";
+} from "@/pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import {VStack} from "@/shared/ui/Stack";
+import {Loader} from "@/shared/ui/Loader/Loader";
 
 interface ArticleDetailsCommentsProps {
     className?: string,

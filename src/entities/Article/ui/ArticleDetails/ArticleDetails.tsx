@@ -1,10 +1,10 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticleDetails.module.scss'
 import {useTranslation} from "react-i18next";
-import {DynamicModuleLoader, ReducerList} from "shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
+import {DynamicModuleLoader, ReducerList} from "@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
 import {articleDetailsReducer} from "../../model/slice/articleDetailsSlice";
 import {memo, useCallback, useEffect} from "react";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {fetchArticleById} from "../../model/services/fetchArticleById/fetchArticleById";
 import {useSelector} from "react-redux";
 import {
@@ -12,17 +12,17 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading
 } from "../../model/selectors/articleDetails";
-import {Text, TextAlign, TextSize} from "shared/ui/Text/Text";
-import {Skeleton} from "shared/ui/Skeleton/Skeleton";
-import {Avatar} from "shared/ui/Avatar/Avatar";
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import CalendarIcon from 'shared/assets/icons/calendar.svg'
-import {Icon} from "shared/ui/Icon/Icon";
+import {Text, TextAlign, TextSize} from "@/shared/ui/Text/Text";
+import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
+import {Avatar} from "@/shared/ui/Avatar/Avatar";
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+import {Icon} from "@/shared/ui/Icon/Icon";
 import {ArticleBlock} from "../../model/types/Article";
-import {ArticleCodeBlockComponent} from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import {ArticleTextBlockComponent} from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {ArticleImageBlockComponent} from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
-import {HStack, VStack} from "shared/ui/Stack";
+import {ArticleCodeBlockComponent} from "@/entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import {ArticleTextBlockComponent} from "@/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
+import {ArticleImageBlockComponent} from "@/entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
+import {HStack, VStack} from "@/shared/ui/Stack";
 import {ArticleBlockType} from "../../model/consts/consts";
 
 interface ArticleDetailsProps {

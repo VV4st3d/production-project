@@ -1,5 +1,5 @@
-import {getCounterValue} from "entities/Counter/model/selectors/getCounterValue/getCounterValue";
-import {StateScheme} from "app/providers/StoreProvider";
+import {getCounterValue} from "@/entities/Counter/model/selectors/getCounterValue/getCounterValue";
+import {StateScheme} from "@/app/providers/StoreProvider";
 
 
 describe('getCounterValue.test', ()=>{

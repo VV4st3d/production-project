@@ -1,13 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticlesPage.module.scss'
 import {memo, useCallback, useEffect} from "react";
-import {DynamicModuleLoader, ReducerList} from "shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
+import {DynamicModuleLoader, ReducerList} from "@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
 import {articlePageSliceReducer} from "../../model/slices/articlesPageSlice";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Page} from "widgets/Page/Page";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {Page} from "@/widgets/Page/Page";
 import {fetchNextArticlePage} from "../../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import {initArticlesPage} from "../../model/services/initArticlesPage/initArticlesPage";
-import {ArticlePageFilters} from "pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters";
+import {ArticlePageFilters} from "@/pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters";
 import {useSearchParams} from 'react-router-dom'
 import {ArticleInfiniteList} from "../ArticleInfiniteList/ArticleInfiniteList";
 

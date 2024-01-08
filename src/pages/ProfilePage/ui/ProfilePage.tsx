@@ -1,8 +1,8 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ProfilePage.module.scss'
-import {Page} from "widgets/Page/Page";
-import {VStack} from "shared/ui/Stack/VStack/VStack";
-import {EditableProfileCard} from "features/editableProfileCard";
+import {Page} from "@/widgets/Page/Page";
+import {VStack} from "@/shared/ui/Stack/VStack/VStack";
+import {EditableProfileCard} from "@/features/editableProfileCard";
 import {useParams} from "react-router-dom";
 
 

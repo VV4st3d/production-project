@@ -1,21 +1,21 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './AddCommentForm.module.scss'
 import {useTranslation} from "react-i18next";
 import {memo, useCallback} from 'react'
-import {Input} from "shared/ui/Input/Input";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
-import {DynamicModuleLoader, ReducerList} from "shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
+import {Input} from "@/shared/ui/Input/Input";
+import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
+import {DynamicModuleLoader, ReducerList} from "@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
 import {useSelector} from "react-redux";
 import {
     getAddCommentFormError,
     getAddCommentFormText
 } from "../../model/selectors/addCommentFormSelector";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     addCommentFormSliceActions,
     addCommentFormSliceReducer
-} from "features/addNewComment/model/slices/addCommetFormSlice";
-import {HStack} from "shared/ui/Stack";
+} from "@/features/addNewComment/model/slices/addCommetFormSlice";
+import {HStack} from "@/shared/ui/Stack";
 
 const reducers: ReducerList = {
     addCommentForm: addCommentFormSliceReducer

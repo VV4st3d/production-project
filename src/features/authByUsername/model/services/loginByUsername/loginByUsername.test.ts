@@ -1,8 +1,8 @@
 import {loginByUsername} from "./loginByUsername";
 import {Dispatch} from "@reduxjs/toolkit";
-import {StateScheme} from "app/providers/StoreProvider";
-import {userActions} from "entities/User";
-import {TestAsyncThunk} from "shared/config/Tests/TestAsyncThunk/TestAsyncThunk";
+import {StateScheme} from "@/app/providers/StoreProvider";
+import {userActions} from "@/entities/User";
+import {TestAsyncThunk} from "@/shared/config/Tests/TestAsyncThunk/TestAsyncThunk";
 
 
 

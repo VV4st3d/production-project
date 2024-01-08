@@ -1,10 +1,10 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './LoginModal.module.scss'
-import {Modal} from "shared/ui/Modal/Modal";
+import {Modal} from "@/shared/ui/Modal/Modal";
 import {useSelector} from "react-redux";
-import {getUserAuthData} from "entities/User";
+import {getUserAuthData} from "@/entities/User";
 import {Suspense, useEffect, useState} from "react";
-import {Loader} from "shared/ui/Loader/Loader";
+import {Loader} from "@/shared/ui/Loader/Loader";
 import {LoginFormAsync} from "../LoginForm/LoginForm.async";
 
 interface LoginModalProps {

@@ -1,4 +1,4 @@
-import {StateScheme} from "app/providers/StoreProvider";
+import {StateScheme} from "@/app/providers/StoreProvider";
 import {getProfileData} from "./getProfileData";
 
 describe('getProfileData.test', ()=>{
