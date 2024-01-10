@@ -755,5 +755,78 @@
       "username": "noname",
       "avatar": "https://academy.avast.com/hubfs/New_Avast_Academy/Hackers/Hacker-Thumb-a1.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "3",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "3"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "",
+      "id": "82SFuMh"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 3,
+      "id": "w3s4nAf"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "123",
+      "id": "9dw4EFP"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "rate": 5,
+      "feedback": "cool",
+      "id": "i4UwtXQ"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "3"
+    }
   ]
 }
