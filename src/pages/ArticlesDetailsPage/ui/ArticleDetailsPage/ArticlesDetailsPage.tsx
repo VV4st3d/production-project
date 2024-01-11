@@ -4,7 +4,7 @@ import {memo} from "react";
 import {ArticleDetails} from "@/entities/Article";
 import {useParams} from "react-router-dom";
 import {DynamicModuleLoader, ReducerList} from "@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
-import {Page} from "@/widgets/Page/Page";
+import {Page} from "@/widgets/Page";
 import {articleDetailsPageReducer} from "../../model/slices/index";
 import {ArticleDetailsPageHeader} from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import {VStack} from "@/shared/ui/Stack";

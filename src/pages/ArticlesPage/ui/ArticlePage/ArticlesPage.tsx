@@ -4,7 +4,7 @@ import {memo, useCallback, useEffect} from "react";
 import {DynamicModuleLoader, ReducerList} from "@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader";
 import {articlePageSliceReducer} from "../../model/slices/articlesPageSlice";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Page} from "@/widgets/Page/Page";
+import {Page} from "@/widgets/Page";
 import {fetchNextArticlePage} from "../../model/services/fetchNextArticlePage/fetchNextArticlePage";
 import {initArticlesPage} from "../../model/services/initArticlesPage/initArticlesPage";
 import {ArticlePageFilters} from "@/pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters";
