@@ -1,7 +1,7 @@
 import React, {Suspense, useEffect} from 'react';
-import {useTheme} from "@/app/providers/ThemeProvider";
+import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
 import {classNames} from "@/shared/lib/classNames/classNames";
-import {AppRouter} from "@/app/providers/router/index";
+import {AppRouter} from "./providers/router";
 import {Navbar} from "@/widgets/Navbar";
 import {Sidebar} from "@/widgets/Sidebar";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
