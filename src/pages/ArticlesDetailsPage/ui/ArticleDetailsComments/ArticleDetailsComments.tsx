@@ -1,6 +1,6 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {memo, Suspense, useCallback, useEffect} from 'react'
-import {Text, TextSize} from "@/shared/ui/Text/Text";
+import {Text, TextSize} from "@/shared/ui/Text";
 import cls from "../../ui/ArticleDetailsPage/ArticlesDetailsPage.module.scss";
 import {AddCommentForm} from "@/features/addNewComment";
 import {CommentList} from "@/entities/Comment";
@@ -14,7 +14,7 @@ import {
     fetchCommentsByArticleId
 } from "@/pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {VStack} from "@/shared/ui/Stack";
-import {Loader} from "@/shared/ui/Loader/Loader";
+import {Loader} from "@/shared/ui/Loader";
 
 interface ArticleDetailsCommentsProps {
     className?: string,

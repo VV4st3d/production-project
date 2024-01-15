@@ -8,7 +8,7 @@ import {
     getArticlePageView
 } from "@/pages/ArticlesPage/model/selectors/getArticlePageSelectors";
 import {ArticleList} from "@/entities/Article";
-import {Text, TextTheme} from "@/shared/ui/Text/Text";
+import {Text, TextTheme} from "@/shared/ui/Text";
 
 interface ArticleInfiniteListProps {
     className?: string,

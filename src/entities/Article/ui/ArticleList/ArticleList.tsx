@@ -5,7 +5,7 @@ import {HTMLAttributeAnchorTarget, memo} from 'react'
 import {Article} from "../../model/types/Article";
 import {ArticleListItem} from "../ArticleListItem/ArticleListItem";
 import {ArticleListItemSkeleton} from "../ArticleListItem/ArticleListItemSkeleton";
-import {Text, TextSize} from "@/shared/ui/Text/Text";
+import {Text, TextSize} from "@/shared/ui/Text";
 import {List, ListRowProps, WindowScroller} from "react-virtualized";
 import {PAGE_ID} from "@/widgets/Page/ui/Page";
 import {ArticleView} from "../../model/consts/consts";

@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 import React, {memo} from 'react'
 import {Comment} from "@/entities/Comment";
 import {CommentCard} from "../CommentCard/CommentCard";
-import {Text} from "@/shared/ui/Text/Text";
+import {Text} from "@/shared/ui/Text";
 import {VStack} from "@/shared/ui/Stack";
 
 

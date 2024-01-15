@@ -4,7 +4,7 @@ import {memo} from 'react'
 import {useNotifications} from "../../api/notificationApi";
 import {VStack} from "@/shared/ui/Stack";
 import {NotificationItem} from "@/entities/Notification/ui/NotificationItem/Notificationitem";
-import {Skeleton} from "@/shared/ui/Skeleton/Skeleton";
+import {Skeleton} from "@/shared/ui/Skeleton";
 
 interface NotificationListProps {
     className?: string,
