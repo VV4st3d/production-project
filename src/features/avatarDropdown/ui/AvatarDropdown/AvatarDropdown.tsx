@@ -6,7 +6,7 @@ import {Dropdown} from "@/shared/ui/Popups";
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "@/entities/User";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
-import {RoutePath} from "@/shared/const/router";
+import {getRouteAdmin, getRouteProfile} from "@/shared/const/router";
 
 interface AvatarDropdownProps {
     className?: string,
@@ -36,9 +36,9 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             className={classNames('', {}, [className])}
             direction={"bottom left"}
             items={[
-                ...(isAdminPanelAvailable ? [{content: t('Админ панель'), href: RoutePath.admin_panel}]
+                ...(isAdminPanelAvailable ? [{content: t('Админ панель'), href: getRouteAdmin()}]
                     : []),
-                {content: t('Профиль'), href: RoutePath.profile + authData.id},
+                {content: t('Профиль'), href: getRouteProfile(authData.id)},
                 {content: t('Выйти'), onClick: onLogout},
             ]}
             trigger={<Avatar size={30} src={authData.avatar}/>} //also can use !authData. - if 100% sure that it's exist
