@@ -9,7 +9,7 @@ const MainPage = () => {
     const {t} = useTranslation()
     const [size, setSize] = useState(false)
     return (
-        <Page className={classNames('', {}, [])}>
+        <Page data-testid={"MainPage"} className={classNames('', {}, [])}>
             {t('Главная страница')}
             <div className={classNames('', {[cls.change]:size}, [])}>
                 <div className={classNames(cls.backside, {}, [])}>

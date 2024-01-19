@@ -1,5 +1,5 @@
 import {updateProfileData} from "./updateProfileData";
-import {TestAsyncThunk} from "@/shared/config/Tests/TestAsyncThunk/TestAsyncThunk";
+import {TestAsyncThunk} from "@/shared/lib/Tests/TestAsyncThunk/TestAsyncThunk";
 import {Country} from "@/entities/Country";
 import {Currency} from "@/entities/Currency";
 

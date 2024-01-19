@@ -19,7 +19,7 @@ const componentsDirs = sharedUiDirectory?.getDirectories()
 
 
 componentsDirs?.forEach(directory => {
-    const indexFilePath = directory.getPath() + '/index.ts'
+    const indexFilePath = directory.getPath() + '/sort.ts'
     const indexFile = directory.getSourceFile(indexFilePath)
 
     if (!indexFile) {
