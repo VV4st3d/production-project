@@ -41,7 +41,8 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                 {content: t('Профиль'), href: getRouteProfile(authData.id)},
                 {content: t('Выйти'), onClick: onLogout},
             ]}
-            trigger={<Avatar size={30} src={authData.avatar}/>} //also can use !authData. - if 100% sure that it's exist
+            trigger={<Avatar fallbackInverted size={30} src={authData.avatar}/>}
+            //also can use !authData. - if 100% sure that it's exist
         />
     );
 });
