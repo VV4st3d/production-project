@@ -29,7 +29,7 @@ export const Counter = ({className}:CounterProps) => {
             <Button onClick={handleDec} data-testid={'decrement-btn'}>
                 decrement
             </Button>
-            <Button onClick={handleAddFive} data-testid={'decrement-btn'}>
+            <Button onClick={handleAddFive}>
                 add5
             </Button>
         </div>
