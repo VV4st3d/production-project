@@ -1,18 +1,17 @@
-import {StateScheme} from "@/app/providers/StoreProvider";
-import {getLoginPassword} from "./getLoginPassword";
+import { StateScheme } from '@/app/providers/StoreProvider';
+import { getLoginPassword } from './getLoginPassword';
 
-describe('getLoginPassword.test', ()=>{
-    test('should return value', ()=>{
+describe('getLoginPassword.test', () => {
+    test('should return value', () => {
         const state: DeepPartial<StateScheme> = {
-            loginForm:{
-                password: '123'
-            }
-        }
+            loginForm: {
+                password: '123',
+            },
+        };
         expect(getLoginPassword(state as StateScheme)).toEqual('123');
-    })
-    test('with empty state', ()=>{
-        const state: DeepPartial<StateScheme> = {
-        }
+    });
+    test('with empty state', () => {
+        const state: DeepPartial<StateScheme> = {};
         expect(getLoginPassword(state as StateScheme)).toEqual('');
-    })
-})
+    });
+});

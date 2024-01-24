@@ -1,29 +1,28 @@
-import React, {Suspense, useEffect} from 'react';
-import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
-import {classNames} from "@/shared/lib/classNames/classNames";
-import {AppRouter} from "./providers/router";
-import {Navbar} from "@/widgets/Navbar";
-import {Sidebar} from "@/widgets/Sidebar";
-import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {getUserInited, userActions} from "@/entities/User";
-import {useSelector} from "react-redux";
-
+import React, { Suspense, useEffect } from 'react';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppRouter } from './providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserInited, userActions } from '@/entities/User';
+import { useSelector } from 'react-redux';
 
 const App = () => {
-    const {theme} = useTheme()
-    const dispatch = useAppDispatch()
-    const inited = useSelector(getUserInited)
+    const { theme } = useTheme();
+    const dispatch = useAppDispatch();
+    const inited = useSelector(getUserInited);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData())
+        dispatch(userActions.initAuthData());
     }, [dispatch]);
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback=''>
-                <Navbar/>
+            <Suspense fallback="">
+                <Navbar />
                 <div className={'content-page'}>
-                    <Sidebar/>
-                    {inited && <AppRouter/>}
+                    <Sidebar />
+                    {inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>

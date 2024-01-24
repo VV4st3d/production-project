@@ -1,20 +1,21 @@
-import {StateScheme} from "@/app/providers/StoreProvider";
-import {getProfileForm} from "./getProfileForm";
+import { StateScheme } from '@/app/providers/StoreProvider';
+import { getProfileForm } from './getProfileForm';
 
-describe('getProfileForm.test', ()=>{
-    test('should return value', ()=>{
+describe('getProfileForm.test', () => {
+    test('should return value', () => {
         const state: DeepPartial<StateScheme> = {
-            profile:{
+            profile: {
                 form: {
-                    first: 'anton'
-                }
-            }
-        }
-        expect(getProfileForm(state as StateScheme)).toEqual({first: 'anton'});
-    })
-    test('with empty state', ()=>{
-        const state: DeepPartial<StateScheme> = {
-        }
+                    first: 'anton',
+                },
+            },
+        };
+        expect(getProfileForm(state as StateScheme)).toEqual({
+            first: 'anton',
+        });
+    });
+    test('with empty state', () => {
+        const state: DeepPartial<StateScheme> = {};
         expect(getProfileForm(state as StateScheme)).toEqual(undefined);
-    })
-})
+    });
+});

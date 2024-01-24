@@ -1,64 +1,62 @@
-import {TestAsyncThunk} from "@/shared/lib/Tests/TestAsyncThunk/TestAsyncThunk";
-import {fetchNextArticlePage} from "./fetchNextArticlePage";
-import {fetchArticlesList} from "../fetchArticlesList/fetchArticlesList";
-import {ArticleType} from "@/entities/Article";
+import { TestAsyncThunk } from '@/shared/lib/Tests/TestAsyncThunk/TestAsyncThunk';
+import { fetchNextArticlePage } from './fetchNextArticlePage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { ArticleType } from '@/entities/Article';
 
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
-jest.mock('../fetchArticlesList/fetchArticlesList')
-
-describe('fetchNextArticlesPage.test', ()=>{
-    test('success', async ()=>{
+describe('fetchNextArticlesPage.test', () => {
+    test('success', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlePage, {
-            articlesPage:{
+            articlesPage: {
                 page: 2,
                 ids: [],
-                entities:{},
+                entities: {},
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
                 type: ArticleType.SCIENCE,
                 search: '123',
+            },
+        });
 
-            }
-        })
+        await thunk.callFunc();
 
-        await thunk.callFunc()
-
-        expect(thunk.dispatch).toBeCalledTimes(4)
-        expect(fetchArticlesList).toHaveBeenCalled()
-    })
-    test('fetchArticleList not called', async ()=>{
+        expect(thunk.dispatch).toBeCalledTimes(4);
+        expect(fetchArticlesList).toHaveBeenCalled();
+    });
+    test('fetchArticleList not called', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlePage, {
-            articlesPage:{
+            articlesPage: {
                 page: 2,
                 ids: [],
-                entities:{},
+                entities: {},
                 limit: 5,
                 isLoading: false,
-                hasMore: false
-            }
-        })
+                hasMore: false,
+            },
+        });
 
-        await thunk.callFunc()
+        await thunk.callFunc();
 
-        expect(thunk.dispatch).toBeCalledTimes(2)
-        expect(fetchArticlesList).not.toHaveBeenCalled()
-    })
-    test('fetchArticleList not called with isLoading', async ()=>{
+        expect(thunk.dispatch).toBeCalledTimes(2);
+        expect(fetchArticlesList).not.toHaveBeenCalled();
+    });
+    test('fetchArticleList not called with isLoading', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlePage, {
-            articlesPage:{
+            articlesPage: {
                 page: 2,
                 ids: [],
-                entities:{},
+                entities: {},
                 limit: 5,
                 isLoading: true,
-                hasMore: true
-            }
-        })
+                hasMore: true,
+            },
+        });
 
-        await thunk.callFunc()
+        await thunk.callFunc();
 
-        expect(thunk.dispatch).toBeCalledTimes(2)
-        expect(fetchArticlesList).not.toHaveBeenCalled()
-    })
-})
+        expect(thunk.dispatch).toBeCalledTimes(2);
+        expect(fetchArticlesList).not.toHaveBeenCalled();
+    });
+});

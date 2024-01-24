@@ -1,34 +1,34 @@
-import {classNames, Mods} from "@/shared/lib/classNames/classNames";
-import cls from './ProfileCard.module.scss'
-import {useTranslation} from "react-i18next";
-import {Text, TextAlign, TextTheme} from "@/shared/ui/Text";
-import {Input} from "@/shared/ui/Input";
-import {Profile} from '../../model/types/profile'
-import {Loader} from "@/shared/ui/Loader";
-import {Avatar} from "@/shared/ui/Avatar";
-import {Currency} from "@/entities/Currency/model/types/currency";
-import {CurrencySelect} from "@/entities/Currency";
-import {Country, CountrySelect} from "@/entities/Country";
-import {HStack, VStack} from "@/shared/ui/Stack";
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './ProfileCard.module.scss';
+import { useTranslation } from 'react-i18next';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
+import { Profile } from '../../model/types/profile';
+import { Loader } from '@/shared/ui/Loader';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Currency } from '@/entities/Currency/model/types/currency';
+import { CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ProfileCardProps {
-    className?: string,
-    data?: Profile,
+    className?: string;
+    data?: Profile;
     error?: string;
     isLoading?: boolean;
-    onChangeLastname?: (value?: string) => void,
-    onChangeFirstname?: (value?: string) => void,
-    readonly?: boolean,
-    onChangeCity?: (value?: string) => void,
-    onChangeAge?: (value?: string) => void,
-    onChangeUsername?: (value?: string) => void,
-    onChangeAvatar?: (value?: string) => void,
-    onChangeCurrency?: (currency: Currency) => void,
-    onChangeCountry?: (value: Country) => void,
+    onChangeLastname?: (value?: string) => void;
+    onChangeFirstname?: (value?: string) => void;
+    readonly?: boolean;
+    onChangeCity?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (value: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-    const {t} = useTranslation('profile')
+    const { t } = useTranslation('profile');
     const {
         className,
         data,
@@ -42,19 +42,34 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeAvatar,
         onChangeCountry,
         onChangeCurrency,
-        readonly
-    } = props
+        readonly,
+    } = props;
 
     if (isLoading) {
         return (
-            <HStack justify={'center'} max className={classNames(cls.ProfileCard, {[cls.loading]: true}, [className])}>
-                <Loader/>
+            <HStack
+                justify={'center'}
+                max
+                className={classNames(
+                    cls.ProfileCard,
+                    { [cls.loading]: true },
+                    [className],
+                )}
+            >
+                <Loader />
             </HStack>
-        )
+        );
     }
     if (error) {
         return (
-            <HStack justify={'center'} max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify={'center'}
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
@@ -62,22 +77,31 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     align={TextAlign.CENTER}
                 />
             </HStack>
-        )
+        );
     }
 
     const mods: Mods = {
-        [cls.editing]: !readonly
-    }
+        [cls.editing]: !readonly,
+    };
     return (
-        <VStack gap={'8'} max className={classNames(cls.ProfileCard, mods, [className])}>
-            {data?.avatar &&
-                <HStack justify={'center'} max className={cls.avatarWrapper}>
-                    <Avatar src={data?.avatar}/>
+        <VStack
+            gap={'8'}
+            max
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
+            {data?.avatar && (
+                <HStack
+                    justify={'center'}
+                    max
+                    className={cls.avatarWrapper}
+                >
+                    <Avatar src={data?.avatar} />
                 </HStack>
-            }
+            )}
             <Input
                 value={data?.first}
-                onChange={onChangeFirstname} placeholder={t('Ваше имя')}
+                onChange={onChangeFirstname}
+                placeholder={t('Ваше имя')}
                 className={cls.input}
                 readonly={readonly}
                 data-testid={'ProfileCard.firstname'}
@@ -118,10 +142,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 readonly={readonly}
             />
-            <CurrencySelect className={cls.input} value={data?.currency} onChange={onChangeCurrency}
-                            readonly={readonly}/>
-            <CountrySelect className={cls.input} value={data?.country} onChange={onChangeCountry}
-                           readonly={readonly}/>
+            <CurrencySelect
+                className={cls.input}
+                value={data?.currency}
+                onChange={onChangeCurrency}
+                readonly={readonly}
+            />
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readonly}
+            />
         </VStack>
     );
 };
