@@ -14,6 +14,8 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '@/pages/ArticlesDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlag } from '@/shared/features';
+import { Counter } from '@/entities/Counter';
 
 interface ArticlesDetailsPageProps {
     className?: string;
@@ -24,6 +26,8 @@ const reducers: ReducerList = {
 
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+    const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
     if (!id) {
         return null;
@@ -43,7 +47,8 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
                 >
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    {isCounterEnabled && <Counter />}
+                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
