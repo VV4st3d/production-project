@@ -4,13 +4,13 @@ import { Themes } from '../../../const/theme';
 import { LOCAL_STORAGE_THEME_KEY } from '../../../const/localstorage';
 
 interface useThemeResult {
-    toggleTheme: () => void;
+    toggleTheme: (saveAction?: (theme: Themes) => void) => void;
     theme: Themes;
 }
 
 export function useTheme(): useThemeResult {
     const { theme, setTheme } = useContext(ThemeContext);
-    const toggleTheme = () => {
+    const toggleTheme = (saveAction?: (theme: Themes) => void) => {
         let newTheme: Themes;
         switch (theme) {
             case Themes.DARK:
@@ -26,6 +26,9 @@ export function useTheme(): useThemeResult {
                 newTheme = Themes.LIGHT;
         }
         setTheme?.(newTheme);
+
+        saveAction?.(newTheme);
+
         document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
