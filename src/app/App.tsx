@@ -19,8 +19,10 @@ const App = () => {
     }, [dispatch]);
 
     if (!inited) {
-        return <PageLoader />;
+        return <PageLoader isLoaderBlack />;
     }
+
+    console.log(theme);
 
     return (
         <div className={classNames('app', {}, [theme])}>

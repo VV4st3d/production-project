@@ -4,12 +4,13 @@ import { Loader } from '@/shared/ui/Loader';
 
 interface PageLoaderProps {
     className?: string;
+    isLoaderBlack?: boolean;
 }
 
-export const PageLoader = ({ className }: PageLoaderProps) => {
+export const PageLoader = ({ className, isLoaderBlack }: PageLoaderProps) => {
     return (
         <div className={classNames(cls.PageLoader, {}, [className])}>
-            <Loader />
+            <Loader isLoaderBlack={isLoaderBlack} />
         </div>
     );
 };
