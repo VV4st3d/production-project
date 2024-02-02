@@ -12,6 +12,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getRoueArticleCreate } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/features';
 
 interface NavbarProps {
     className?: string;
@@ -32,31 +33,51 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <aside className={classNames(cls.Navbar, {}, [className])}>
-                <Text
-                    theme={TextTheme.INVERTED}
-                    className={cls.appName}
-                    title={t('Social Media App')}
-                />
-                <AppLink
-                    to={getRoueArticleCreate()}
-                    theme={AppLinkTheme.SECONDARY}
-                    className={cls.createLink}
-                >
-                    {t('Создать статью')}
-                </AppLink>
-                <HStack
-                    gap={'16'}
-                    className={cls.actions}
-                >
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-                <LoginModal
-                    onClose={onCloseModal}
-                    isOpen={isAuthModal}
-                />
-            </aside>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <header
+                        className={classNames(cls.NavbarRedesigned, {}, [
+                            className,
+                        ])}
+                    >
+                        <HStack
+                            gap={'16'}
+                            className={cls.actions}
+                        >
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                }
+                off={
+                    <header className={classNames(cls.Navbar, {}, [className])}>
+                        <Text
+                            theme={TextTheme.INVERTED}
+                            className={cls.appName}
+                            title={t('Social Media App')}
+                        />
+                        <AppLink
+                            to={getRoueArticleCreate()}
+                            theme={AppLinkTheme.SECONDARY}
+                            className={cls.createLink}
+                        >
+                            {t('Создать статью')}
+                        </AppLink>
+                        <HStack
+                            gap={'16'}
+                            className={cls.actions}
+                        >
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                        <LoginModal
+                            onClose={onCloseModal}
+                            isOpen={isAuthModal}
+                        />
+                    </header>
+                }
+            />
         );
     }
 

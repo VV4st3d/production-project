@@ -8,6 +8,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 const App = () => {
     const { theme } = useTheme();
@@ -22,18 +24,33 @@ const App = () => {
         return <PageLoader isLoaderBlack />;
     }
 
-    console.log(theme);
-
     return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className={'content-page'}>
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            sidebar={<Sidebar />}
+                            content={<AppRouter />}
+                            toolbar={<div>jd</div>}
+                        />
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            off={
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className={'content-page'}>
+                            <Sidebar />
+                            <AppRouter />
+                        </div>
+                    </Suspense>
+                </div>
+            }
+        />
     );
 };
 

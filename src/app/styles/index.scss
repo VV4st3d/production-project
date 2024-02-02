@@ -10,6 +10,13 @@
     min-height: 100vh;
 }
 
+.app_redesigned{
+    background: var(--bg-redesigned);
+    min-height: 100vh;
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
+}
+
 .app, .app_drawer, .app_modal{
     font: var(--font-m);
     color: var(--primary-color);
