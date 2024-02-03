@@ -4,7 +4,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useSelector } from 'react-redux';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
@@ -19,7 +19,7 @@ import {
 } from '@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 import { useTranslation } from 'react-i18next';
 import { EditableProfileCardHeader } from '@/features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {

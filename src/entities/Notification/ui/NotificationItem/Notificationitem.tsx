@@ -3,8 +3,8 @@ import cls from './Notificationitem.module.scss';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Notification } from '../../model/types/notifications';
-import { Card, CardTheme } from '@/shared/ui/Card';
-import { Text } from '@/shared/ui/Text';
+import { Card, CardTheme } from '@/shared/ui/deprecated/Card';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface NotificationItemProps {
     className?: string;

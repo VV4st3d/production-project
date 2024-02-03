@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
 import { Comment } from '@/entities/Comment';
 import { CommentCard } from '../CommentCard/CommentCard';
-import { Text } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 interface CommentListProps {
     className?: string;
