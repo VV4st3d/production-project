@@ -12,7 +12,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getRoueArticleCreate } from '@/shared/const/router';
-import { ToggleFeatures } from '@/shared/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
     className?: string;

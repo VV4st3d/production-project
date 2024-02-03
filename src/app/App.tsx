@@ -8,7 +8,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
 import { PageLoader } from '@/widgets/PageLoader';
-import { ToggleFeatures } from '@/shared/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 
 const App = () => {

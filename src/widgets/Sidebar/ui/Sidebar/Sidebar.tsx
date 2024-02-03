@@ -8,7 +8,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { VStack } from '@/shared/ui/Stack';
-import { ToggleFeatures } from '@/shared/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/AppLogo';
 
 interface SidebarProps {
