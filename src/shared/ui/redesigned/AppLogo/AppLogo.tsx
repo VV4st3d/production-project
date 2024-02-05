@@ -6,12 +6,9 @@ import { HStack } from '@/shared/ui/deprecated/Stack';
 
 interface AppLogoProps {
     className?: string;
+    size?: number;
 }
-/**
- * устарел, используем новые компоненты из папки redesigned
- * @deprecated
- * */
-export const AppLogo = memo(({ className }: AppLogoProps) => {
+export const AppLogo = memo(({ className, size }: AppLogoProps) => {
     return (
         <HStack
             max
@@ -20,7 +17,12 @@ export const AppLogo = memo(({ className }: AppLogoProps) => {
         >
             <div className={cls.gradientBig}></div>
             <div className={cls.gradientSmall}></div>
-            <AppSvg className={cls.appLogo} />
+            <AppSvg
+                width={size}
+                height={size}
+                color={'black'}
+                className={cls.appLogo}
+            />
         </HStack>
     );
 });
