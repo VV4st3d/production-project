@@ -49,10 +49,6 @@ export interface FlexProps {
     gap?: FlexGap;
     max?: boolean;
 }
-/**
- * устарел, используем новые компоненты из папки redesigned
- * @deprecated
- * */
 export const Flex = memo((props: FlexProps) => {
     const {
         className,

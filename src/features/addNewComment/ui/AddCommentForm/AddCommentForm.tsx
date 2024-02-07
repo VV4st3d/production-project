@@ -18,7 +18,7 @@ import {
     addCommentFormSliceActions,
     addCommentFormSliceReducer,
 } from '@/features/addNewComment/model/slices/addCommetFormSlice';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 const reducers: ReducerList = {
     addCommentForm: addCommentFormSliceReducer,

@@ -19,7 +19,7 @@ import {
 } from '@/shared/lib/components/DinamicModuleLoader/DynamicModuleLoader';
 import { useTranslation } from 'react-i18next';
 import { EditableProfileCardHeader } from '@/features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {

@@ -11,7 +11,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTranslation } from 'react-i18next';
 import { fetchCommentsByArticleId } from '@/pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 
 interface ArticleDetailsCommentsProps {

@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import { Comment } from '@/entities/Comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Text } from '@/shared/ui/deprecated/Text';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface CommentListProps {
     className?: string;
