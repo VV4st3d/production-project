@@ -1,6 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StickyContentLayout.module.scss';
-import { useTranslation } from 'react-i18next';
 import { memo, ReactElement } from 'react';
 
 interface StickyContentLayoutProps {
@@ -11,12 +10,12 @@ interface StickyContentLayoutProps {
 }
 
 export const StickyContentLayout = memo((props: StickyContentLayoutProps) => {
-    const { t } = useTranslation();
     const { className, left, content, right } = props;
 
     return (
         <div className={classNames(cls.MainLayout, {}, [className])}>
             {right && <div className={cls.left}>{left}</div>}
+            <div className={cls.content}>{content}</div>
             {left && <div className={cls.right}>{right}</div>}
         </div>
     );

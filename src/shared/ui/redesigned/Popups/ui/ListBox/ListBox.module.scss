@@ -6,6 +6,10 @@
   box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
 }
 
+.selected{
+  background: var(--light-bg-redesigned);
+}
+
 .trigger{
   background: none;
   border: none;

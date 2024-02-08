@@ -17,6 +17,7 @@ import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 interface ArticlesPageProps {
     className?: string;
@@ -44,6 +45,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             on={
                 <StickyContentLayout
                     left={<ViewSelectorContainer />}
+                    right={<FiltersContainer />}
                     content={
                         <Page
                             onScrollEnd={onLoadNextPart}
