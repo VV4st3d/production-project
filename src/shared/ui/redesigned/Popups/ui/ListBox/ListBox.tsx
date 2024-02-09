@@ -7,6 +7,8 @@ import { HStack } from '../../../../redesigned/Stack';
 import { DropDownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
+import ArrowIcon from '@shared/assets/icons/arrow-bottom.svg';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 export interface ListBoxItem<T extends string> {
     value: string;
@@ -60,6 +62,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     className={cls.trigger}
                 >
                     <Button
+                        addonRight={<Icon Svg={ArrowIcon} />}
                         variant={'filled'}
                         disabled={readonly}
                     >
