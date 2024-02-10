@@ -1,45 +1,56 @@
-.InputWrapper{
+.InputWrapper {
   display: flex;
   align-items: center;
   border-radius: 48px;
   padding: 8px 16px;
   border: 1.5px solid var(--icon-redesigned);
-  height: 32px;
   width: 100%;
 }
 
-.addonLeft, .addonRight{
+.addonLeft, .addonRight {
   display: flex;
 }
 
-.withAddonLeft{
+.withAddonLeft {
   padding-left: 8px;
 }
 
-.withAddonRight{
+.withAddonRight {
   padding-right: 8px;
 }
 
-.focused{
+.focused {
   border: 1.5px solid var(--accent-redesigned);
 
-  .addonLeft svg, .addonRight svg{
+  .addonLeft svg, .addonRight svg {
     color: var(--accent-redesigned)
   }
 }
 
-.readonly{
+.readonly {
   opacity: 0.7;
 }
 
-.input{
+.m {
+  height: 38px;
+}
+
+.s {
+  height: 32px;
+}
+
+.l {
+  height: 44px;
+}
+
+.input {
   border: none;
   outline: none;
   width: 100%;
   color: var(--text-redesigned);
   background: none;
 
-  &::placeholder{
+  &::placeholder {
     color: var(--hint-redesigned);
   }
 }
