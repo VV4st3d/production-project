@@ -1,4 +1,9 @@
-.AppLogo {
+.appLogoWrapper {
+  position: relative;
+}
+
+.appLogo{
+  z-index: 10;
   position: relative;
 }
 
