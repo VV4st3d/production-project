@@ -10,10 +10,9 @@ import NotificationsIcon from '@/shared/assets/icons/notification.svg';
 import { NotificationList } from '@/entities/Notification';
 import cls from './NotificationButton.module.scss';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Button } from '@/shared/ui/redesigned/Button';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';
 
