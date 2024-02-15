@@ -1,15 +1,15 @@
 .MainLayout {
-display: grid;
+  display: grid;
   grid-template-areas:
 'left content right';
   grid-template-columns: min-content 1fr min-content;
 }
 
-.left{
+.left {
   grid-area: left;
 }
 
-.content{
+.content {
   grid-area: content;
   max-width: 1200px;
   justify-self: center;
@@ -17,11 +17,11 @@ display: grid;
   width: 100%;
 }
 
-.right{
+.right {
   grid-area: right;
 }
 
-.left, .right{
+.left, .right {
   position: sticky;
   top: 32px;
   height: fit-content;

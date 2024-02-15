@@ -31,7 +31,7 @@ export const ProfileCardRedesignedSkeleton = () => {
     return (
         <Card
             padding={'24'}
-            max
+            maxWidth
         >
             <VStack gap={'32'}>
                 <HStack
@@ -114,7 +114,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
 
     return (
         <Card
-            max
+            maxWidth
             padding={'24'}
             className={className}
         >

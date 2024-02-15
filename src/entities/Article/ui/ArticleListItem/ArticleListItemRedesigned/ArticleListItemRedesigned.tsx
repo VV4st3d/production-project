@@ -44,7 +44,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
         return (
             <Card
-                max
+                maxWidth
                 padding={'24'}
                 className={classNames(cls.ArticleListItem, {}, [
                     className,
