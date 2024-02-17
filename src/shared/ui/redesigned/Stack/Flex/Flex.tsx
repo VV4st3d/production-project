@@ -10,6 +10,7 @@ import React, {
 export type FlexJustify = 'center' | 'start' | 'end' | 'between';
 export type FlexAlign = 'center' | 'start' | 'end';
 export type FlexDirection = 'row' | 'column';
+export type FlexWrap = 'nowrap' | 'wrap';
 export type FlexGap = '4' | '8' | '16' | '24' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -47,6 +48,7 @@ export interface FlexProps {
     justify?: FlexJustify;
     align?: FlexAlign;
     direction: FlexDirection;
+    wrap?: FlexWrap;
     gap?: FlexGap;
     max?: boolean;
 }
@@ -59,6 +61,7 @@ export const Flex = memo((props: FlexProps) => {
         align = 'center',
         gap,
         max,
+        wrap = 'nowrap',
     } = props;
 
     const classes = [
@@ -67,6 +70,7 @@ export const Flex = memo((props: FlexProps) => {
         alignClasses[align],
         directionClasses[direction],
         gap && gapClasses[gap],
+        cls[wrap],
     ];
     const mods: Mods = {
         [cls.max]: max,
