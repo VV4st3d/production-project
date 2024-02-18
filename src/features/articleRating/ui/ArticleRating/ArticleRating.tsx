@@ -7,7 +7,9 @@ import {
 } from '../../api/articleRatingApi';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export interface ArticleRatingProps {
     className?: string;
@@ -48,6 +50,12 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const onAccept = useCallback((starsCount: number, feedback?: string) => {
         handleRateArticle(starsCount, feedback);
     }, []);
+
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
+    });
 
     if (isLoading) {
         return (

@@ -718,7 +718,7 @@
         "ADMIN"
       ],
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_dark_theme",
         "isArticlePageHasWasOpened": true
       },
       "features": {

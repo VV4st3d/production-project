@@ -66,7 +66,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                             className={cls.card}
                         />
                     ))}
-                    {getSkeletons(view)}
+                    {isLoading && getSkeletons(view)}
                 </HStack>
             }
             off={
