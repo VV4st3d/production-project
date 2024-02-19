@@ -59,7 +59,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 on={
                     <Card
                         padding={'24'}
-                        border={'round'}
+                        border={'partial'}
                         maxWidth
                     >
                         <HStack

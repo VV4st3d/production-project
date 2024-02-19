@@ -115,6 +115,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
     return (
         <Card
             maxWidth
+            border={'partial'}
             padding={'24'}
             className={className}
         >
