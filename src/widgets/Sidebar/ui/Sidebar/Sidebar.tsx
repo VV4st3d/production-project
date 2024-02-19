@@ -5,8 +5,7 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { useSelector } from 'react-redux';
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
@@ -21,7 +20,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     // в setState можно передавать калбек, который принимает предыдущее значение (prev=>!prev)
 
-    const sidebarItemList = useSelector(getSidebarItems);
+    const sidebarItemList = useSidebarItems();
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
