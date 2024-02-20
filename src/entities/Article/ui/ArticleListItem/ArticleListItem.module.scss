@@ -103,13 +103,11 @@
     width: 100%;
   }
   &.SMALL{
-    width: 240px;
-    height: 350px;
+    .card{
+      width: 240px;
+      height: 350px;
+    }
   }
 }
 
-.cardSmall{
-  width: 240px;
-  height: 350px;
-}
 
