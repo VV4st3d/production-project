@@ -1,6 +1,7 @@
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 import React, {
+    CSSProperties,
     DetailedHTMLProps,
     HTMLAttributes,
     memo,
@@ -50,6 +51,7 @@ export interface FlexProps {
     direction: FlexDirection;
     wrap?: FlexWrap;
     gap?: FlexGap;
+    style?: CSSProperties;
     max?: boolean;
 }
 export const Flex = memo((props: FlexProps) => {
@@ -60,6 +62,7 @@ export const Flex = memo((props: FlexProps) => {
         direction = 'row',
         align = 'center',
         gap,
+        style,
         max,
         wrap = 'nowrap',
     } = props;
@@ -77,6 +80,11 @@ export const Flex = memo((props: FlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)}>{children}</div>
+        <div
+            style={style}
+            className={classNames(cls.Flex, mods, classes)}
+        >
+            {children}
+        </div>
     );
 });
